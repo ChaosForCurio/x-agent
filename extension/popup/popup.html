@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="popup.css">
+  <title>XAgent</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <span class="x-brand">X</span>Agent
+      </div>
+      <button id="settings-btn" class="icon-btn">⚙️</button>
+    </header>
+
+    <main>
+      <div id="loading-view" class="view hidden">
+        <div class="loader"></div>
+        <p>Analyzing page...</p>
+      </div>
+
+      <div id="initial-view" class="view">
+        <h1>Auto-Draft Social Post</h1>
+        <p class="description">Generate an engaging post for X based on this page.</p>
+        <button id="generate-btn" class="primary-btn">Generate Draft</button>
+      </div>
+
+      <div id="result-view" class="view hidden">
+        <label for="post-content">Generated Draft:</label>
+        <textarea id="post-content" spellcheck="true"></textarea>
+        <div class="actions">
+          <button id="regenerate-btn" class="secondary-btn">Regenerate</button>
+          <button id="post-btn" class="primary-btn">Post to X</button>
+        </div>
+        <div class="toggle-container">
+          <span>Auto-post on X</span>
+          <label class="switch">
+            <input type="checkbox" id="auto-post-toggle">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <div id="settings-view" class="view hidden">
+        <div class="nav-header">
+          <button id="back-btn" class="icon-btn">←</button>
+          <h2>Configuration</h2>
+        </div>
+
+        <div class="settings-group">
+          <label for="ai-service">AI Provider</label>
+          <select id="ai-service">
+            <option value="none">Default Heuristics (No Key)</option>
+            <option value="gemini">Google Gemini</option>
+            <option value="openai">OpenAI</option>
+          </select>
+        </div>
+
+        <div id="api-key-group" class="settings-group hidden">
+          <label for="api-key">API Key</label>
+          <input type="password" id="api-key" placeholder="Enter your key here">
+        </div>
+
+        <button id="save-settings-btn" class="primary-btn">Save Changes</button>
+      </div>
+    </main>
+
+    <footer>
+      <p>Powered by XAgent AI</p>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>
